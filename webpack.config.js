@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
     mode: 'development',
     entry: {
-        main: './src/index.js'
+        outline: './src/js/index.js'
     },
     output: {
         filename: '[name].bundle.js',
@@ -30,7 +30,8 @@ module.exports = {
                 }
             },
             {
-                test: /\.tsx?$/, loader: 'awesome-typescript-loader'
+                test: /\.less$/,
+                use: [{ loader: 'style-loader'}, { loader: 'css-loader' }, { loader: 'less-loader '}]
             },
             {
                 enforce: 'pre', test: /\.js$/, loader: 'source-map-loader'
