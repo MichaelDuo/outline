@@ -10,5 +10,14 @@
         <div id="app">
         </div>
         <script src="/outline.bundle.js"></script>
+        <script>
+            var client = new XMLHttpRequest()
+            fetch('/data/testdata.json')
+            .then(response => response.json())
+            .then(data=>{
+                let outline = new Outline(data)
+                outline.mount("app")
+            })
+        </script>
     </body>
 </html>

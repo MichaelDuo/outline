@@ -25,13 +25,19 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader'
-                }
+                use: ['babel-loader']
+            },
+            {
+                test: /\.css/,
+                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.less$/,
-                use: [{ loader: 'style-loader'}, { loader: 'css-loader' }, { loader: 'less-loader '}]
+                use: ['style-loader', 'css-loader', 'less-loader ']
+            },
+            {
+                test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
+                use: [ 'file-loader' ]
             },
             {
                 enforce: 'pre', test: /\.js$/, loader: 'source-map-loader'
