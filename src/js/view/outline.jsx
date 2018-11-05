@@ -11,9 +11,7 @@ import MainTopic from './main-topic'
 export default class Outline extends React.Component {
     constructor(props){
         super(props)
-        this.state = {
-            dataString: JSON.stringify(this.props.data, null, 2)
-        }
+        this.state = { }
     }
     
     componentDidMount(){
@@ -28,15 +26,17 @@ export default class Outline extends React.Component {
     }
 
     render() {
+        let rootTopic = this.props.rootTopic
+        let rootTopicChildren = rootTopic.children || []
         return (
-            <div>
-                <RootTopic></RootTopic>
-                <MainTopic></MainTopic>
+            <div className="outline">
+                <RootTopic topic={rootTopic}></RootTopic>
+                {rootTopicChildren.map(child => <MainTopic key={child.id} topic={child}></MainTopic>)}
             </div>
         )
     }
 }
 
 Outline.propTypes = {
-    data: PropTypes.object
+    rootTopic: PropTypes.object
 }

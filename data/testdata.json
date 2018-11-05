@@ -7,14 +7,24 @@
         "children": [
             {
                 "id": "topic-1",
-                "title": "Main Topic"
+                "title": "Main Topic 1",
+                "children": [
+                    {
+                        "id": "topic-1-1",
+                        "title": "Main Topic 1-1"
+                    },
+                    {
+                        "id": "topic-1-2",
+                        "title": "Main Topic 1-2"
+                    }
+                ]
             },
             {
                 "id": "topic-2",
-                "title": "Main Topic"
+                "title": "Main Topic 2"
             },{
                 "id": "topic-3",
-                "title": "Main Topic"
+                "title": "Main Topic 3"
             }
         ]
     }
